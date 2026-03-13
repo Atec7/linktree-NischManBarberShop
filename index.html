@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Nisch Barbearia</title>
+<style>
+  body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background: linear-gradient(180deg, #000 0%, #222 100%);
+    color: #fff;
+    text-align: center;
+  }
+  /* Tela de carregamento */
+  .loader {
+    position: fixed;
+    top: 0; left: 0;
+    width: 100%; height: 100%;
+    background: #000;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    z-index: 9999;
+  }
+  .loader img {
+    width: 160px;
+    height: 160px;
+    border-radius: 50%;
+    border: 3px solid #f0c000;
+    margin-bottom: 20px;
+  }
+  .progress {
+    width: 60%;
+    height: 12px;
+    background: #333;
+    border-radius: 6px;
+    overflow: hidden;
+    margin-bottom: 10px;
+  }
+  .progress-bar {
+    height: 100%;
+    width: 0;
+    background: #f0c000;
+    transition: width 0.3s;
+  }
+  .loader p {
+    font-size: 14px;
+    color: #ccc;
+  }
+  /* Conteúdo principal */
+  .container {
+    max-width: 500px;
+    margin: 0 auto;
+    padding: 20px;
+    display: none; /* escondido até carregar */
+  }
+  .logo {
+    margin-top: 30px;
+  }
+  .logo img {
+    width: 160px;
+    height: 160px;
+    border-radius: 50%;
+    border: 3px solid #f0c000;
+  }
+  p {
+    font-size: 15px;
+    color: #ccc;
+    margin-bottom: 30px;
+  }
+  .links a {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    gap: 15px;
+    margin: 12px auto;
+    padding: 12px;
+    width: 90%;
+    max-width: 320px;
+    color: #fff;
+    text-decoration: none;
+    border-radius: 50px;
+    font-weight: bold;
+    transition: 0.3s;
+  }
+  .links a img {
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+    background: #fff;
+    padding: 4px;
+  }
+  .links a:hover { opacity: 0.85; }
+  /* Cores oficiais */
+  .instagram { background: #E4405F; }
+  .whatsapp { background: #25D366; }
+  .facebook { background: #1877F2; }
+  .tiktok { background: #010101; }
+  .youtube { background: #FF0000; }
+  .site { background: #444444; }
+  .maps { background: #4285F4; }
+  footer {
+    margin-top: 40px;
+    font-size: 12px;
+    color: #777;
+  }
+</style>
+</head>
+<body>
+
+<!-- Tela de carregamento -->
+<div class="loader">
+  <img src="logo.png" alt="Logo Nisch Barbearia">
+  <div class="progress"><div class="progress-bar"></div></div>
+  <p>www.atecseven.com.br</p>
+</div>
+
+<!-- Conteúdo principal -->
+<div class="container">
+  <div class="logo">
+    <img src="logo.jpeg" alt="Logo Nisch Barbearia">
+  </div>
+  <p>Seu estilo, nossa arte</p>
+
+  <div class="links">
+    <a class="instagram" href="https://www.instagram.com/nischmanbarbershop?igsh=bnZiZmt0eHBtejJw" target="_blank">
+      <img src="https://cdn-icons-png.flaticon.com/512/2111/2111463.png" alt="Instagram"> Instagram
+    </a>
+    <a class="whatsapp" href="https://wa.me/556492860009?text=Olá,%20gostaria%20de%20saber%20a%20disponibilidade%20para%20agendar%20um%20horário" target="_blank">
+      <img src="https://cdn-icons-png.flaticon.com/512/733/733585.png" alt="WhatsApp"> WhatsApp
+    </a>
+    <a class="facebook" href="https://www.facebook.com/share/19YWmxb77Z/" target="_blank">
+      <img src="https://cdn-icons-png.flaticon.com/512/733/733547.png" alt="Facebook"> Facebook
+    </a>
+    <a class="tiktok" href="https://tiktok.com/@alessandro.barbei" target="_blank">
+      <img src="https://cdn-icons-png.flaticon.com/512/3046/3046121.png" alt="TikTok"> TikTok
+    </a>
+    <a class="youtube" href="https://youtube.com/@nischbarbearia" target="_blank">
+      <img src="https://cdn-icons-png.flaticon.com/512/1384/1384060.png" alt="YouTube"> YouTube
+    </a>
+   <!-- <a class="site" href="https://nischbarbearia.com" target="_blank">
+      <img src="https://cdn-icons-png.flaticon.com/512/609/609803.png" alt="Site"> Site Oficial
+    </a>-->
+    <a class="maps" href="https://share.google/9rIAgAKZrcs12UhVK" target="_blank">
+      <img src="https://cdn-icons-png.flaticon.com/512/684/684908.png" alt="Localização"> Localização
+    </a>
+  </div>
+
+  <footer>
+    © 2026 Nisch Barbearia
+  </footer>
+</div>
+
+<script>
+  // Simulação de carregamento
+  let progress = document.querySelector('.progress-bar');
+  let loader = document.querySelector('.loader');
+  let container = document.querySelector('.container');
+  let width = 0;
+  let interval = setInterval(() => {
+    width += 5;
+    progress.style.width = width + '%';
+    if (width >= 100) {
+      clearInterval(interval);
+      setTimeout(() => {
+        loader.style.display = 'none';
+        container.style.display = 'block';
+      }, 500);
+    }
+  }, 200);
+</script>
+
+</body>
+</html>
